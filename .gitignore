@@ -1,0 +1,3 @@
+*.nix
+/venv
+/__pycache__
