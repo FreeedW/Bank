@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZБанк - Главная</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="../static/logo.png" alt="ZБанк" class="logo">
+            <div class="nav-links">
+                <a href="dashboard.html">Главная</a>
+                <a href="profile.html">Профиль</a>
+                <a href="login.html">Выход</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="dashboard">
+            <div class="left-column">
+                <div class="card balance-card">
+                    <h2>Баланс счета</h2>
+                    <div class="balance-amount">150,000 ₽</div>
+                    <button class="button">Перевести средства</button>
+                </div>
+                
+                <div class="card">
+                    <h2>История транзакций</h2>
+                    <div class="transactions-list">
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-user">Перевод Ивану</div>
+                                <div class="transaction-date">2024-03-20 15:30</div>
+                            </div>
+                            <div class="transaction-amount negative">-5,000 ₽</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-user">Получено от Петра</div>
+                                <div class="transaction-date">2024-03-19 12:15</div>
+                            </div>
+                            <div class="transaction-amount positive">+15,000 ₽</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-user">Перевод Анне</div>
+                                <div class="transaction-date">2024-03-18 09:45</div>
+                            </div>
+                            <div class="transaction-amount negative">-3,000 ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="card">
+                    <div class="profile-icon">A</div>
+                    <h3>Alexander</h3>
+                    <a href="profile.html" class="button">Перейти в профиль</a>
+                </div>
+                
+                <div class="card">
+                    <h3>Быстрый перевод</h3>
+                    <form class="form-group">
+                        <input type="text" placeholder="Имя получателя">
+                        <input type="number" placeholder="Сумма">
+                        <button type="submit" class="button">Перевести</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
