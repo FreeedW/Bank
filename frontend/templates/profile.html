@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZБанк - Профиль</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="../static/logo.png" alt="ZБанк" class="logo">
+            <div class="nav-links">
+                <a href="dashboard.html">Главная</a>
+                <a href="profile.html" class="active">Профиль</a>
+                <a href="login.html">Выход</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="profile-container">
+            <!-- Секция с информацией профиля -->
+            <div class="profile-header card">
+                <div class="profile-info">
+                    <div class="profile-icon large">A</div>
+                    <div class="profile-details">
+                        <h2>Alexander</h2>
+                        <p class="user-id">ID: 123456789</p>
+                    </div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Дата регистрации</span>
+                        <span class="stat-value">15.03.2024</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Текущий баланс</span>
+                        <span class="stat-value balance-amount">150,000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <!-- Левая колонка с настройками -->
+                <div class="profile-settings card">
+                    <h3>Настройки профиля</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Имя пользователя</label>
+                            <input type="text" value="Alexander" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Пасскод</label>
+                            <div class="passcode-container">
+                                <input type="password" value="123456" disabled>
+                                <button type="button" class="button secondary" id="showPasscode">
+                                    Показать
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email для уведомлений</label>
+                            <input type="email" value="alex@example.com">
+                        </div>
+                        <button type="submit" class="button">Сохранить изменения</button>
+                    </form>
+                </div>
+
+                <!-- Правая колонка с историей -->
+                <div class="transactions-history card">
+                    <h3>История операций</h3>
+                    <div class="transactions-filters">
+                        <select class="filter-select">
+                            <option value="all">Все операции</option>
+                            <option value="incoming">Входящие</option>
+                            <option value="outgoing">Исходящие</option>
+                        </select>
+                        <input type="month" class="filter-date">
+                    </div>
+                    <div class="transactions-list">
+                        <!-- Транзакции буд��т добавляться через JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../static/js/main.js"></script>
+</body>
+</html> 
