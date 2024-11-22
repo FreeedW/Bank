@@ -8,9 +8,9 @@
 <body>
 <div class="container">
   <div class="user-section">
-    <div class="user-info-wrapper">
+    <div>
       <div class="profile-icon">A</div>
-      <div class="user-info">
+      <div>
         <p>Alexander</p>
       </div>
     </div>
@@ -19,45 +19,42 @@
       <a href="login.html" class="link-button logout">Выйти</a>
     </div>
   </div>
-  <div class="left-column">
+  <div>
     <div class="balance-section">
-      <div class="card-label">Основная карта</div>
+      <div>Основная карта</div>
       <div class="balance-text">150,000 ₽</div>
     </div>
-    <div class="transactions-section">
+  </div>
+  <div>
+    <div class="quick-transfer">
+      <h3>Быстрый перевод</h3>
+      <form>
+        <label for="recipient" class="visually-hidden">username получателя</label>
+        <input id="recipient" type="text" placeholder="username получателя">
+        <input type="number" placeholder="сумма">
+        <button type="submit" class="action-button">Перевести</button>
+      </form>
+    </div>
+    <div class="transactions-section"></div>
       <h3>Последние операции</h3>
       <div class="transaction-item">
         <div class="transaction-info">
           <div>Перевод Ивану</div>
-          <div class="date">20 марта 2024</div>
+          <div>20 марта 2024</div>
         </div>
         <div class="amount negative">-5,000 ₽</div>
       </div>
       <div class="transaction-item">
-        <div class="transaction-info">
+        <div>
           <div>Получено от Петра</div>
-          <div class="date">19 марта 2024</div>
+          <div>19 марта 2024</div>
         </div>
         <div class="amount positive">+15,000 ₽</div>
       </div>
     </div>
   </div>
-  <div class="right-column">
-    <div class="quick-actions">
-      <button class="action-button">💸 Перевод</button>
-      <button class="action-button">💰 Пополнить</button>
-    </div>
-    <div class="quick-transfer">
-      <h3>Быстрый перевод</h3>
-      <form>
-        <input type="text" placeholder="👤 Имя получателя">
-        <input type="number" placeholder="💰 Сумма">
-        <button type="submit" class="action-button">Перевести</button>
-      </form>
-    </div>
-  </div>
   <div class="zbank-logo">
-    <img src="../static/logo.png" width="120" alt="ZBank">
+    <img src="../static/logo.png" width="150" alt="ZBank">
   </div>
 </div>
 </body>

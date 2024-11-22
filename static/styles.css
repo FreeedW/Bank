@@ -1,269 +1,183 @@
 :root {
-    --primary-color: #668676;
-    --secondary-color: #85a597;
-    --background-color: #d0e2d3;
-    --hover-color: #5b7668;
-    --light-accent: #a7c1b3;
+  --color-lightest: #a9d6bb;
+  --color-light: #7ebe9c;
+  --color-medium: #5b9a7d;
+  --color-dark: #3a786a;
+  --color-darkest: #2c5953;
+  --shadow: 0 2px 8px rgba(44, 89, 83, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: var(--background-color);
-    font-family: sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+  background-color: #a9d6bb;
+  color: var(--color-darkest);
 }
 
-/* Обновленный контейнер */
 .container {
-    background-color: var(--secondary-color);
-    border-radius: 20px;
-    padding: 25px;
-    width: 95%;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-gap: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 7rem;
 }
 
-/* Поиск */
-.search-bar {
-    grid-column: 1 / -1;
-    margin-bottom: 20px;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--light-accent);
-    color: #333;
-    font-size: 16px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* Обновленный профиль */
-.user-section {
-    grid-column: 1 / -1;
-    background-color: var(--light-accent);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.profile-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    border: 3px solid white;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
-    margin-right: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Обновленные колонки */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Обновленный баланс */
-.balance-section {
-    background-color: var(--light-accent);
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.balance-text {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Обновленные транзакции */
-.transactions-section {
-    background-color: var(--light-accent);
-    padding: 20px;
-    border-radius: 15px;
-    max-height: 500px;
-    overflow-y: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.transaction-item {
-    padding: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.transaction-item:last-child {
-    border-bottom: none;
-}
-
-/* Обновленные кнопки */
+/* Компоненты */
 .action-button {
-    padding: 15px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: var(--color-medium);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-/* Обновленный быстрый перевод */
-.quick-transfer {
-    background-color: var(--light-accent);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.quick-transfer form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.quick-transfer input {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* Обновленный логотип */
-.zbank-logo {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.zbank-logo img {
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-.zbank-logo img:hover {
-    transform: scale(1.05);
-}
-
-/* Медиа запросы */
-@media (max-width: 992px) {
-    .container {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .left-column,
-    .right-column {
-        grid-column: 1;
-    }
-}
-
-@media (max-width: 576px) {
-    body {
-        padding: 0;
-    }
-
-    .container {
-        width: 100%;
-        border-radius: 0;
-        margin: 0;
-    }
-    
-    .user-section {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .profile-icon {
-        margin: 0 0 15px 0;
-    }
-
-    .balance-section {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
-
-/* Добавляем стили для auth-container и centered-container */
-.centered-container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.auth-container {
-    background-color: var(--secondary-color);
-    border-radius: 20px;
-    padding: 25px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Обновляем стили для user-actions и link-button */
-.user-actions {
-    display: flex;
-    gap: 10px;
+.action-button:hover {
+  background: var(--color-dark);
 }
 
 .link-button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.2s ease;
-    font-size: 14px;
+  color: var(--color-dark);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
 }
 
-.link-button:hover {
-    background-color: var(--hover-color);
+.quick-transfer {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
-.link-button.logout {
-    background-color: #d64545;
+.logout {
+  color: #d32f2f;
 }
 
-.link-button.logout:hover {
-    background-color: #b83b3b;
+.transactions-section {
+    margin-top: 1rem;
+}
+
+/* Формы */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--color-light);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--color-medium);
+  border-color: transparent;
+}
+
+/* Карточки и секции */
+.auth-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: 400px;
+  width: 100%;
+}
+
+.balance-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.balance-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-dark);
+}
+
+/* Транзакции */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-lightest);
+}
+
+.amount.positive {
+  color: var(--color-medium);
+}
+
+.amount.negative {
+  color: #d32f2f;
+}
+
+/* Профиль */
+.profile-icon {
+  background: var(--color-light);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.zbank-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.zbank-logo img {
+  border-radius: 12px;
+}
+
+/* Утилиты */
+.centered-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem auto;
+  }
+  
+  .user-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
