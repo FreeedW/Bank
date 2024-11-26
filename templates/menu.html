@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>ZBank - Главная</title>
+<link rel="stylesheet" href="../static/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+  <div class="user-section">
+    <div>
+      <div class="profile-icon">A</div>
+      <div>
+        <p>Alexander</p>
+      </div>
+    </div>
+    <div class="user-actions">
+      <a href="profile.html" class="link-button">Профиль</a>
+      <a href="login.html" class="link-button logout">Выйти</a>
+    </div>
+  </div>
+  <div>
+    <div class="balance-section">
+      <div>Основная карта</div>
+      <div class="balance-text">150,000 ₽</div>
+    </div>
+  </div>
+  <div>
+    <div class="quick-transfer">
+      <h3>Быстрый перевод</h3>
+      <form>
+        <label for="recipient" class="visually-hidden">username получателя</label>
+        <input id="recipient" type="text" placeholder="username получателя">
+        <input type="number" placeholder="сумма">
+        <button type="submit" class="action-button">Перевести</button>
+      </form>
+    </div>
+    <div class="transactions-section"></div>
+      <h3>Последние операции</h3>
+      <div class="transaction-item">
+        <div class="transaction-info">
+          <div>Перевод Ивану</div>
+          <div>20 марта 2024</div>
+        </div>
+        <div class="amount negative">-5,000 ₽</div>
+      </div>
+      <div class="transaction-item">
+        <div>
+          <div>Получено от Петра</div>
+          <div>19 марта 2024</div>
+        </div>
+        <div class="amount positive">+15,000 ₽</div>
+      </div>
+    </div>
+  </div>
+  <div class="zbank-logo">
+    <img src="../static/logo.png" width="150" alt="ZBank">
+  </div>
+</div>
+</body>
+</html>
+

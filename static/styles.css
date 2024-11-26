@@ -1,0 +1,183 @@
+:root {
+  --color-lightest: #a9d6bb;
+  --color-light: #7ebe9c;
+  --color-medium: #5b9a7d;
+  --color-dark: #3a786a;
+  --color-darkest: #2c5953;
+  --shadow: 0 2px 8px rgba(44, 89, 83, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #a9d6bb;
+  color: var(--color-darkest);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 7rem;
+}
+
+/* Компоненты */
+.action-button {
+  background: var(--color-medium);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-button:hover {
+  background: var(--color-dark);
+}
+
+.link-button {
+  color: var(--color-dark);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.quick-transfer {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.logout {
+  color: #d32f2f;
+}
+
+.transactions-section {
+    margin-top: 1rem;
+}
+
+/* Формы */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--color-light);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--color-medium);
+  border-color: transparent;
+}
+
+/* Карточки и секции */
+.auth-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: 400px;
+  width: 100%;
+}
+
+.balance-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.balance-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-dark);
+}
+
+/* Транзакции */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-lightest);
+}
+
+.amount.positive {
+  color: var(--color-medium);
+}
+
+.amount.negative {
+  color: #d32f2f;
+}
+
+/* Профиль */
+.profile-icon {
+  background: var(--color-light);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.zbank-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.zbank-logo img {
+  border-radius: 12px;
+}
+
+/* Утилиты */
+.centered-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem auto;
+  }
+  
+  .user-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
