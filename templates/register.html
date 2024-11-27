@@ -11,12 +11,9 @@
             <img src="../static/logo.png" width="100">
         </div>
         <h2>Регистрация</h2>
-        <form action="{{ url_for('login') }}">
+        <form action="{{ url_for('login') }}" method="post">
             <div class="form-group">
-                <input type="text" placeholder="Придумайте имя пользователя" required>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Придумайте пасскод" required>
+                <input type="text" name="username" placeholder="Придумайте имя пользователя" required>
             </div>
             <button type="submit" class="action-button">Зарегистрироваться</button>
         </form>
@@ -25,5 +22,14 @@
         </div>
     </div>
 </div>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("Ваш пасскод: {{ messages[0] }}\nСохраните его, он понадобится для входа!");
+        </script>
+    {% endif %}
+{% endwith %}
+
 </body>
 </html> 

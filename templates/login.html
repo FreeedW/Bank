@@ -11,7 +11,7 @@
             <img src="../static/logo.png" width="200">
         </div>
         <h2>Вход в систему</h2>
-        <form action="{{ url_for('dashboard') }}" method="POST">
+        <form action="{{ url_for('dashboard') }}" method="post">
             <div class="form-group">
                 <input type="text" 
                        name="username"
@@ -22,7 +22,7 @@
                        required>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Пасскод" required>
+                <input type="password" name="passcode" placeholder="Пасскод" required>
             </div>
             <button type="submit" class="action-button">Войти</button>
         </form>

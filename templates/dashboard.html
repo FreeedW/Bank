@@ -9,9 +9,9 @@
 <div class="container">
   <div class="user-section">
     <div>
-      <div class="profile-icon">A</div>
+      <div class="profile-icon">{{ username[0] | upper }}</div>
       <div>
-        <p>Alexander</p>
+        <p>{{ username }}</p>
       </div>
     </div>
     <div class="user-actions">
@@ -22,35 +22,37 @@
   <div>
     <div class="balance-section">
       <div>Основная карта</div>
-      <div class="balance-text">150,000 ₽</div>
+      <div class="balance-text">{{ balance }} ₽</div>
     </div>
   </div>
   <div>
     <div class="quick-transfer">
       <h3>Быстрый перевод</h3>
-      <form>
-        <label for="recipient" class="visually-hidden">username получателя</label>
-        <input id="recipient" type="text" placeholder="username получателя">
-        <input type="number" placeholder="сумма">
+      <form method="POST">
+        <input name="recipient" type="text" placeholder="username получателя" required>
+        <input name="amount" type="number" placeholder="сумма" required>
         <button type="submit" class="action-button">Перевести</button>
       </form>
     </div>
-    <div class="transactions-section"></div>
+    <div class="transactions-section">
       <h3>Последние операции</h3>
+      {% for transaction in transactions %}
       <div class="transaction-item">
         <div class="transaction-info">
-          <div>Перевод Ивану</div>
-          <div>20 марта 2024</div>
+          <div>
+            {% if transaction[1] == session['user_id'] %}
+              Перевод {{ get_username(transaction[2]) }}
+            {% else %}
+              Получено от {{ get_username(transaction[1]) }}
+            {% endif %}
+          </div>
+          <div>{{ transaction[4] }}</div>
         </div>
-        <div class="amount negative">-5,000 ₽</div>
-      </div>
-      <div class="transaction-item">
-        <div>
-          <div>Получено от Петра</div>
-          <div>19 марта 2024</div>
+        <div class="amount {% if transaction[1] == session['user_id'] %}negative{% else %}positive{% endif %}">
+          {{ transaction[3] }} ₽
         </div>
-        <div class="amount positive">+15,000 ₽</div>
       </div>
+      {% endfor %}
     </div>
   </div>
   <div class="zbank-logo">
