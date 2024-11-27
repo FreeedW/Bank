@@ -11,7 +11,7 @@
             <img src="../static/logo.png" width="100">
         </div>
         <h2>Регистрация</h2>
-        <form action="login.html">
+        <form action="{{ url_for('login') }}">
             <div class="form-group">
                 <input type="text" placeholder="Придумайте имя пользователя" required>
             </div>
@@ -21,7 +21,7 @@
             <button type="submit" class="action-button">Зарегистрироваться</button>
         </form>
         <div class="form-group" style="text-align: center">
-            <a href="login.html" class="link-button">Уже есть аккаунт</a>
+            <a href="{{ url_for('login') }}" class="link-button">Уже есть аккаунт</a>
         </div>
     </div>
 </div>

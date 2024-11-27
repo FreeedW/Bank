@@ -9,11 +9,11 @@
 <body>
     <nav class="nav-container">
         <div>
-            <img src="../static/logo.png" alt="ZБанк" class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="ZБанк" class="logo">
             <div class="nav-links">
-                <a href="dashboard.html" class="link-button">Главная</a>
-                <a href="profile.html" class="link-button">Профиль</a>
-                <a href="login.html" class="link-button logout">Выход</a>
+                <a href="{{ url_for('dashboard') }}" class="link-button">Главная</a>
+                <a href="{{ url_for('profile') }}" class="link-button">Профиль</a>
+                <a href="{{ url_for('login') }}" class="link-button logout">Выход</a>
             </div>
         </div>
     </nav>
