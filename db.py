@@ -5,7 +5,7 @@ import random
 class DataBase:
     # Устанавливаем соединение с базой данных
     def __init__(self):
-        self.connection_db = sqlite3.connect("data.db")
+        self.connection_db = sqlite3.connect("data.db", check_same_thread=False)
         self.db = self.connection_db.cursor()
         self.db.execute(
             """
@@ -152,6 +152,24 @@ class DataBase:
                 "[-] Проверьте чтобы передоваемое условие было правильным или правильно указано имя бд",
                 e,
             )
+
+    def login_user(self, username, passcode):
+        """Функция, которая проверяет возвращает True или False
+        Args:
+            username: Пользователь, котрого проверяем
+            passcode: секретный пароль
+        """
+        try:
+            passcodedb = self.db.execute(
+                "SELECT secret_key FROM users WHERE username = ?", (username,)
+            ).fetchone()
+            print(f"{passcode} == {passcodedb[0]}")
+            if passcode == passcodedb[0]:
+                return True  # Пользователь допущен
+            else:
+                return False  # Не допущен
+        except:
+            print("[-] Ошибка при проверки пользователя в бд")
 
     # Сохраняем изменения и закрываем соединение
     def __del__(self):

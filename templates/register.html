@@ -1,35 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
+  <head>
     <title>ZBank - Регистрация</title>
-    <link rel="stylesheet" href="../static/styles.css">
-</head>
-<body>
-<div class="centered-container">
-    <div class="auth-container">
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <div class="centered-container">
+      <div class="auth-container">
         <div class="zbank-logo">
-            <img src="../static/logo.png" width="100">
+          <img src="../static/logo.png" width="100" />
         </div>
         <h2>Регистрация</h2>
-        <form action="{{ url_for('login') }}" method="post">
-            <div class="form-group">
-                <input type="text" name="username" placeholder="Придумайте имя пользователя" required>
-            </div>
-            <button type="submit" class="action-button">Зарегистрироваться</button>
+        <form action="{{ url_for('register') }}" method="post">
+          <div class="form-group">
+            <input
+              type="text"
+              name="username"
+              placeholder="Придумайте имя пользователя"
+              required
+            />
+          </div>
+          <button type="submit" class="action-button">
+            Зарегистрироваться
+          </button>
         </form>
         <div class="form-group" style="text-align: center">
-            <a href="{{ url_for('login') }}" class="link-button">Уже есть аккаунт</a>
+          <a href="{{ url_for('login') }}" class="link-button"
+            >Уже есть аккаунт</a
+          >
         </div>
+      </div>
     </div>
-</div>
 
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <script>
-            alert("Ваш пасскод: {{ messages[0] }}\nСохраните его, он понадобится для входа!");
-        </script>
-    {% endif %}
-{% endwith %}
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <script>
+      alert(
+        "Ваш пасскод: {{ messages[0] }}\nСохраните его, он понадобится для входа!",
+      );
+    </script>
+    {% endif %} {% endwith %}
+  </body>
+</html>
 
-</body>
-</html> 
